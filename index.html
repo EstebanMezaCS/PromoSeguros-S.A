@@ -12,57 +12,37 @@
             --primary: #C8102E;
             --primary-dark: #9B0D23;
             --secondary: #1A1A1A;
-            --accent: #F5A623;
             --light: #FFFFFF;
             --gray-light: #F7F7F7;
             --gray: #E5E5E5;
             --gray-dark: #666666;
-            --text-dark: #1A1A1A;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Work Sans', sans-serif;
             background: var(--light);
-            color: var(--text-dark);
+            color: var(--secondary);
             overflow-x: hidden;
         }
 
-        /* Navigation */
+        /* ========== NAVIGATION ========== */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 1rem 5%;
+            padding: 0.75rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
             background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-
-        .logo img {
-            height: 70px;
-            width: auto;
-        }
+        .logo { text-decoration: none; }
+        .logo img { height: 80px; width: auto; }
 
         .nav-links {
             display: flex;
@@ -78,24 +58,20 @@
             font-size: 0.9rem;
             letter-spacing: 0.5px;
             text-transform: uppercase;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
 
-        .nav-links a:hover {
-            color: var(--primary);
-        }
+        .nav-links a:hover { color: var(--primary); }
 
         .nav-cta {
             background: var(--primary);
             color: white !important;
             padding: 0.75rem 1.5rem;
             border-radius: 4px;
-            transition: all 0.3s ease !important;
         }
 
         .nav-cta:hover {
             background: var(--primary-dark);
-            transform: translateY(-2px);
         }
 
         .menu-toggle {
@@ -103,75 +79,58 @@
             flex-direction: column;
             gap: 5px;
             cursor: pointer;
-            z-index: 1001;
         }
 
         .menu-toggle span {
             width: 28px;
             height: 3px;
             background: var(--secondary);
-            transition: all 0.3s ease;
             border-radius: 2px;
         }
 
-        /* Hero Section */
+        /* ========== HERO ========== */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
+            justify-content: center;
             position: relative;
-            overflow: hidden;
             background: linear-gradient(135deg, var(--secondary) 0%, #2d2d2d 100%);
+            text-align: center;
+            padding: 120px 5% 60px;
         }
 
-        .hero-bg {
+        .hero::before {
+            content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            padding: 10px;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('images/fachada-truckdepot.jpeg') center/cover;
             opacity: 0.15;
-        }
-
-        .hero-bg img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            width: 100%;
             max-width: 900px;
-            margin: 0 auto;
-            padding: 150px 5% 80px;
-            text-align: center;
         }
 
-        .hero-text h1 {
+        .hero h1 {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: clamp(3rem, 10vw, 7rem);
+            font-size: clamp(3.5rem, 12vw, 8rem);
             color: var(--light);
             line-height: 0.95;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             margin-bottom: 1.5rem;
         }
 
-        .hero-text h1 span {
-            color: var(--primary);
-        }
+        .hero h1 span { color: var(--primary); }
 
-        .hero-text p {
+        .hero p {
             font-size: 1.25rem;
             color: rgba(255, 255, 255, 0.85);
             line-height: 1.8;
             margin-bottom: 2.5rem;
-            max-width: 600px;
+            max-width: 650px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -179,8 +138,8 @@
         .hero-buttons {
             display: flex;
             gap: 1rem;
-            flex-wrap: wrap;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -191,19 +150,12 @@
             letter-spacing: 0.5px;
             text-transform: uppercase;
             text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
+            transition: all 0.3s;
             border: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+            cursor: pointer;
         }
 
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-        }
-
+        .btn-primary { background: var(--primary); color: white; }
         .btn-primary:hover {
             background: var(--primary-dark);
             transform: translateY(-3px);
@@ -215,22 +167,13 @@
             color: white;
             border: 2px solid rgba(255, 255, 255, 0.5);
         }
-
         .btn-outline:hover {
             border-color: white;
             background: rgba(255, 255, 255, 0.1);
         }
 
-        /* About Section */
-        .about {
-            padding: 6rem 5%;
-            background: var(--light);
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
+        /* ========== SECTIONS COMMON ========== */
+        .section-header { text-align: center; margin-bottom: 4rem; }
 
         .section-tag {
             display: inline-block;
@@ -249,6 +192,9 @@
             color: var(--secondary);
         }
 
+        /* ========== ABOUT ========== */
+        .about { padding: 6rem 5%; background: var(--light); }
+
         .about-grid {
             max-width: 1200px;
             margin: 0 auto;
@@ -258,22 +204,15 @@
             align-items: center;
         }
 
-        .about-content .about-item {
-            margin-bottom: 2rem;
-        }
-
-        .about-content .about-item h3 {
+        .about-item { margin-bottom: 2rem; }
+        .about-item h3 {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 1.5rem;
             color: var(--primary);
             letter-spacing: 1px;
             margin-bottom: 0.75rem;
         }
-
-        .about-content .about-item p {
-            color: var(--gray-dark);
-            line-height: 1.8;
-        }
+        .about-item p { color: var(--gray-dark); line-height: 1.8; }
 
         .about-badge {
             display: flex;
@@ -284,281 +223,424 @@
             border-radius: 8px;
             border-left: 4px solid var(--primary);
         }
-
-        .about-badge-icon {
-            font-size: 2rem;
-        }
-
-        .about-badge-text {
-            font-size: 0.9rem;
-            color: var(--text-dark);
-            line-height: 1.5;
-        }
+        .about-badge-icon { font-size: 2rem; }
+        .about-badge-text { font-size: 0.9rem; line-height: 1.5; }
 
         .about-images {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1rem;
         }
-
         .about-images img {
             width: 100%;
             height: 200px;
             object-fit: cover;
             border-radius: 8px;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s;
         }
+        .about-images img:hover { transform: scale(1.03); }
+        .about-images img:first-child { grid-column: span 2; height: 250px; }
 
-        .about-images img:hover {
-            transform: scale(1.03);
-        }
-
-        .about-images img:first-child {
-            grid-column: span 2;
-            height: 250px;
-        }
-
-        /* Services Section - Giant Totem Style */
+        /* ========== SERVICES - ZIGZAG TOTEM ========== */
         .services {
             padding: 6rem 5%;
-            background: linear-gradient(180deg, #f0f0f0 0%, #e5e5e5 100%);
+            background: linear-gradient(180deg, #1a1a1a 0%, #252525 100%);
+            overflow: hidden;
+        }
+
+        .services .section-tag { color: var(--primary); }
+        .services .section-title { color: var(--light); }
+
+        /* Zigzag Totem Container */
+        .zigzag-totem {
             position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 0 80px;
         }
 
-        .services .section-header {
-            margin-bottom: 3rem;
+        /* Central Pole */
+        .totem-pole-center {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 80px;
+            width: 40px;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, #3a3a3a 0%, #555 20%, #666 50%, #555 80%, #3a3a3a 100%);
+            border-radius: 20px 20px 0 0;
+            z-index: 1;
         }
 
-        /* Giant Totem Structure */
-        .giant-totem-wrapper {
-            display: flex;
-            justify-content: center;
-            padding: 2rem 0 4rem;
-        }
-
-        .giant-totem {
-            position: relative;
-            max-width: 450px;
-            width: 100%;
-        }
-
-        /* Totem Crown/Header */
-        .totem-crown {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
-            text-align: center;
-            padding: 2rem 1.5rem;
-            border-radius: 12px 12px 0 0;
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 2rem;
-            letter-spacing: 3px;
-            box-shadow: 0 -10px 30px rgba(200, 16, 46, 0.3);
-            position: relative;
-            z-index: 10;
-        }
-
-        .totem-crown::before {
+        /* Pole top decoration */
+        .totem-pole-center::before {
             content: '';
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 10px 10px 0 0;
+            clip-path: polygon(10% 100%, 90% 100%, 100% 0, 0 0);
+        }
+
+        /* Crown text */
+        .totem-crown-text {
             position: absolute;
             top: -20px;
             left: 50%;
             transform: translateX(-50%);
-            width: 0;
-            height: 0;
-            border-left: 30px solid transparent;
-            border-right: 30px solid transparent;
-            border-bottom: 20px solid var(--primary);
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            border-radius: 6px;
+            z-index: 5;
+            white-space: nowrap;
         }
 
-        /* Totem Body - The main structure */
-        .totem-body {
-            background: linear-gradient(90deg, #4a4a4a 0%, #5a5a5a 3%, #666 50%, #5a5a5a 97%, #4a4a4a 100%);
-            padding: 8px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        /* Pole base */
+        .totem-pole-base {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 80px;
+            background: linear-gradient(180deg, #444 0%, #333 100%);
+            border-radius: 10px;
+            z-index: 2;
         }
 
-        /* Individual Service Panels */
-        .totem-panel {
+        .totem-pole-base::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 30px;
+            background: radial-gradient(ellipse, rgba(0,0,0,0.5) 0%, transparent 70%);
+        }
+
+        /* Service panels container */
+        .totem-panels {
+            position: relative;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            padding-top: 60px;
+        }
+
+        /* Individual service panel */
+        .totem-service {
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
+
+        /* Alternate left and right */
+        .totem-service:nth-child(odd) { justify-content: flex-start; }
+        .totem-service:nth-child(even) { justify-content: flex-end; }
+
+        /* The panel card */
+        .service-panel {
+            width: calc(50% - 40px);
             background: white;
-            margin-bottom: 8px;
+            border-radius: 12px;
             overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
             transition: all 0.3s ease;
             position: relative;
         }
 
-        .totem-panel:last-child {
-            margin-bottom: 0;
+        .service-panel:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
         }
 
-        .totem-panel:hover {
-            transform: scale(1.02);
-            z-index: 5;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        /* Connector arm to pole */
+        .totem-service:nth-child(odd) .service-panel::after {
+            content: '';
+            position: absolute;
+            right: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 20px;
+            background: linear-gradient(180deg, #555 0%, #444 100%);
+            border-radius: 0 10px 10px 0;
         }
 
-        .totem-panel-image {
+        .totem-service:nth-child(even) .service-panel::before {
+            content: '';
+            position: absolute;
+            left: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 20px;
+            background: linear-gradient(180deg, #555 0%, #444 100%);
+            border-radius: 10px 0 0 10px;
+        }
+
+        .service-panel img {
             width: 100%;
-            height: 120px;
+            height: 140px;
             object-fit: cover;
-            display: block;
         }
 
-        .totem-panel-content {
-            padding: 1rem 1.25rem;
-            background: linear-gradient(180deg, white 0%, #fafafa 100%);
-            border-top: 3px solid var(--primary);
+        .service-panel-content {
+            padding: 1.25rem;
+            border-top: 4px solid var(--primary);
         }
 
-        .totem-panel-content h3 {
+        .service-panel-content h3 {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: var(--secondary);
             letter-spacing: 1px;
             margin-bottom: 0.5rem;
         }
 
-        .totem-panel-content p {
+        .service-panel-content p {
             color: var(--gray-dark);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             line-height: 1.5;
         }
 
-        /* Totem Base/Pole */
-        .totem-base {
-            background: linear-gradient(90deg, #3a3a3a 0%, #555 50%, #3a3a3a 100%);
-            height: 30px;
-            border-radius: 0 0 8px 8px;
+        /* ========== TRUCK SECTION ========== */
+        .truck-section {
+            margin-top: 5rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
 
-        .totem-pole {
-            width: 60px;
-            height: 120px;
-            background: linear-gradient(90deg, #4a4a4a 0%, #666 30%, #777 50%, #666 70%, #4a4a4a 100%);
-            margin: 0 auto;
-            border-radius: 0 0 8px 8px;
-            position: relative;
-        }
-
-        .totem-pole::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 20px;
-            background: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
-            border-radius: 50%;
-        }
-
-        /* Totem Ground Shadow */
-        .totem-shadow {
-            width: 80%;
-            height: 30px;
-            background: radial-gradient(ellipse at center, rgba(0,0,0,0.3) 0%, transparent 70%);
-            margin: 0 auto;
-            margin-top: -10px;
-        }
-
-        /* Truck Service Card */
-        .service-extra {
-            max-width: 550px;
-            margin: 4rem auto 0;
-            position: relative;
-        }
-
-        .service-extra-title {
+        .truck-title {
             text-align: center;
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.5rem;
-            color: var(--secondary);
-            margin-bottom: 1.5rem;
-            letter-spacing: 2px;
+            font-size: 2rem;
+            color: var(--light);
+            letter-spacing: 3px;
+            margin-bottom: 2.5rem;
         }
 
-        .truck-body {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        /* Realistic Truck */
+        .truck-container {
+            max-width: 750px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .truck {
             display: flex;
+            align-items: flex-end;
+            position: relative;
         }
 
+        /* Truck Cabin */
         .truck-cabin {
-            width: 100px;
+            width: 180px;
+            height: 160px;
             background: var(--primary);
+            border-radius: 20px 80px 0 0;
+            position: relative;
+            z-index: 2;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 1.5rem 1rem;
+            box-shadow: inset -10px 0 20px rgba(0,0,0,0.2);
         }
 
-        .truck-cabin svg {
-            width: 40px;
+        /* Cabin window */
+        .truck-cabin::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 20px;
+            right: 20px;
+            height: 60px;
+            background: linear-gradient(180deg, #87CEEB 0%, #5BA3C6 100%);
+            border-radius: 10px 40px 5px 5px;
+            border: 4px solid #333;
+        }
+
+        /* Cabin front grill */
+        .truck-cabin::after {
+            content: '';
+            position: absolute;
+            bottom: 20px;
+            left: 15px;
+            width: 50px;
             height: 40px;
+            background: repeating-linear-gradient(
+                0deg,
+                #333 0px,
+                #333 4px,
+                #555 4px,
+                #555 8px
+            );
+            border-radius: 5px;
+        }
+
+        .truck-cabin-icon {
+            position: absolute;
+            bottom: 25px;
+            right: 25px;
+        }
+
+        .truck-cabin-icon svg {
+            width: 50px;
+            height: 50px;
             fill: white;
+            opacity: 0.9;
         }
 
-        .truck-cabin span {
-            color: white;
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            margin-top: 0.5rem;
-        }
-
+        /* Truck Cargo/Trailer */
         .truck-cargo {
             flex: 1;
+            height: 180px;
+            background: white;
+            border-radius: 0 15px 0 0;
+            position: relative;
+            margin-left: -10px;
+            z-index: 1;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
         }
 
         .truck-cargo-header {
             background: var(--secondary);
             color: white;
-            padding: 0.75rem 1.25rem;
+            padding: 1rem 1.5rem;
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.1rem;
-            letter-spacing: 1px;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
         }
 
-        .truck-cargo-content {
-            padding: 1.25rem;
+        .truck-cargo-body {
+            padding: 1.5rem;
+            height: calc(100% - 60px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        .truck-cargo-content p {
+        .truck-cargo-body h4 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .truck-cargo-body p {
             color: var(--gray-dark);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             line-height: 1.6;
         }
 
-        .truck-wheels {
+        /* Cargo side panels look */
+        .truck-cargo::after {
+            content: '';
+            position: absolute;
+            right: 20px;
+            top: 70px;
+            bottom: 20px;
+            width: 4px;
+            background: #ddd;
+        }
+
+        /* Truck Wheels */
+        .truck-wheels-container {
             display: flex;
-            justify-content: space-around;
-            padding: 0 40px;
-            margin-top: -8px;
+            justify-content: space-between;
+            padding: 0 30px 0 40px;
+            margin-top: -25px;
             position: relative;
-            z-index: 1;
+            z-index: 3;
         }
 
-        .wheel {
-            width: 28px;
-            height: 28px;
-            background: #333;
+        .wheel-group {
+            display: flex;
+            gap: 8px;
+        }
+
+        .truck-wheel {
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle at 35% 35%, #555 0%, #222 50%, #111 100%);
             border-radius: 50%;
-            border: 3px solid #555;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+            border: 6px solid #333;
+            box-shadow: 
+                0 5px 15px rgba(0,0,0,0.5),
+                inset 0 -3px 10px rgba(0,0,0,0.3);
+            position: relative;
         }
 
-        /* FAQ Section */
-        .faq {
-            padding: 6rem 5%;
-            background: var(--gray-light);
+        /* Wheel hub */
+        .truck-wheel::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, #888 0%, #555 100%);
+            border-radius: 50%;
         }
 
-        .faq-container {
-            max-width: 900px;
-            margin: 0 auto;
+        /* Wheel nuts */
+        .truck-wheel::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 30px;
+            background: 
+                radial-gradient(circle at 50% 20%, #444 2px, transparent 2px),
+                radial-gradient(circle at 80% 50%, #444 2px, transparent 2px),
+                radial-gradient(circle at 50% 80%, #444 2px, transparent 2px),
+                radial-gradient(circle at 20% 50%, #444 2px, transparent 2px);
         }
+
+        /* Ground/Road */
+        .truck-ground {
+            height: 20px;
+            background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
+            border-radius: 10px;
+            margin-top: -5px;
+            position: relative;
+        }
+
+        .truck-ground::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 10%;
+            right: 10%;
+            height: 3px;
+            background: repeating-linear-gradient(
+                90deg,
+                #FFD700 0px,
+                #FFD700 30px,
+                transparent 30px,
+                transparent 50px
+            );
+        }
+
+        /* ========== FAQ ========== */
+        .faq { padding: 6rem 5%; background: var(--gray-light); }
+
+        .faq-container { max-width: 900px; margin: 0 auto; }
 
         .faq-item {
             background: white;
@@ -577,38 +659,20 @@
             font-family: 'Work Sans', sans-serif;
             font-size: 1rem;
             font-weight: 600;
-            color: var(--text-dark);
+            color: var(--secondary);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: background 0.3s ease;
+            transition: background 0.3s;
         }
 
-        .faq-question:hover {
-            background: var(--gray-light);
-        }
+        .faq-question:hover { background: var(--gray-light); }
+        .faq-question svg { width: 20px; height: 20px; transition: transform 0.3s; flex-shrink: 0; }
+        .faq-item.active .faq-question svg { transform: rotate(180deg); }
 
-        .faq-question svg {
-            width: 20px;
-            height: 20px;
-            transition: transform 0.3s ease;
-            flex-shrink: 0;
-        }
-
-        .faq-item.active .faq-question svg {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 300px;
-        }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s; }
+        .faq-item.active .faq-answer { max-height: 300px; }
 
         .faq-answer-content {
             padding: 0 1.5rem 1.5rem;
@@ -616,11 +680,8 @@
             line-height: 1.7;
         }
 
-        /* Contact Section */
-        .contact {
-            padding: 6rem 5%;
-            background: var(--light);
-        }
+        /* ========== CONTACT ========== */
+        .contact { padding: 6rem 5%; background: var(--light); }
 
         .contact-container {
             max-width: 1200px;
@@ -634,7 +695,6 @@
             font-family: 'Bebas Neue', sans-serif;
             font-size: 2.5rem;
             letter-spacing: 2px;
-            color: var(--secondary);
             margin-bottom: 1.5rem;
         }
 
@@ -644,10 +704,7 @@
             margin-bottom: 2rem;
         }
 
-        .contact-details {
-            list-style: none;
-        }
-
+        .contact-details { list-style: none; }
         .contact-details li {
             display: flex;
             align-items: flex-start;
@@ -655,10 +712,7 @@
             padding: 1.25rem 0;
             border-bottom: 1px solid var(--gray);
         }
-
-        .contact-details li:last-child {
-            border-bottom: none;
-        }
+        .contact-details li:last-child { border-bottom: none; }
 
         .contact-details .icon {
             width: 50px;
@@ -670,25 +724,9 @@
             justify-content: center;
             flex-shrink: 0;
         }
-
-        .contact-details .icon svg {
-            width: 24px;
-            height: 24px;
-            stroke: white;
-            fill: none;
-        }
-
-        .contact-details .info strong {
-            display: block;
-            color: var(--secondary);
-            margin-bottom: 0.25rem;
-        }
-
-        .contact-details .info span {
-            color: var(--gray-dark);
-            font-size: 0.95rem;
-        }
-
+        .contact-details .icon svg { width: 24px; height: 24px; stroke: white; fill: none; }
+        .contact-details .info strong { display: block; margin-bottom: 0.25rem; }
+        .contact-details .info span { color: var(--gray-dark); font-size: 0.95rem; }
         .contact-details .info small {
             display: block;
             color: var(--gray-dark);
@@ -703,17 +741,8 @@
             padding: 2.5rem;
         }
 
-        .form-group {
-            margin-bottom: 1.25rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            font-size: 0.85rem;
-            color: var(--secondary);
-        }
+        .form-group { margin-bottom: 1.25rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.85rem; }
 
         .form-group input,
         .form-group textarea,
@@ -725,27 +754,17 @@
             border-radius: 6px;
             font-family: 'Work Sans', sans-serif;
             font-size: 1rem;
-            transition: border-color 0.3s ease;
+            transition: border-color 0.3s;
         }
 
         .form-group input:focus,
         .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
+        .form-group select:focus { outline: none; border-color: var(--primary); }
 
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
+        .form-group textarea { min-height: 120px; resize: vertical; }
+        .contact-form .btn { width: 100%; justify-content: center; display: flex; }
 
-        .contact-form .btn {
-            width: 100%;
-            justify-content: center;
-        }
-
-        /* Footer */
+        /* ========== FOOTER ========== */
         footer {
             background: var(--secondary);
             color: var(--light);
@@ -760,16 +779,8 @@
             gap: 3rem;
         }
 
-        .footer-brand img {
-            height: 60px;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-brand p {
-            color: rgba(255, 255, 255, 0.6);
-            line-height: 1.7;
-            font-size: 0.9rem;
-        }
+        .footer-brand img { height: 70px; margin-bottom: 1.5rem; }
+        .footer-brand p { color: rgba(255, 255, 255, 0.6); line-height: 1.7; font-size: 0.9rem; }
 
         .footer-column h4 {
             font-family: 'Bebas Neue', sans-serif;
@@ -778,24 +789,15 @@
             margin-bottom: 1.5rem;
         }
 
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 0.75rem;
-        }
-
+        .footer-column ul { list-style: none; }
+        .footer-column ul li { margin-bottom: 0.75rem; }
         .footer-column ul li a {
             color: rgba(255, 255, 255, 0.6);
             text-decoration: none;
             font-size: 0.9rem;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
-
-        .footer-column ul li a:hover {
-            color: var(--primary);
-        }
+        .footer-column ul li a:hover { color: var(--primary); }
 
         .footer-bottom {
             max-width: 1200px;
@@ -809,16 +811,9 @@
             gap: 1rem;
         }
 
-        .footer-bottom p {
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.85rem;
-        }
+        .footer-bottom p { color: rgba(255, 255, 255, 0.5); font-size: 0.85rem; }
 
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
-
+        .social-links { display: flex; gap: 1rem; }
         .social-links a {
             width: 40px;
             height: 40px;
@@ -828,42 +823,19 @@
             align-items: center;
             justify-content: center;
             color: var(--light);
-            text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
         }
+        .social-links a:hover { background: var(--primary); transform: translateY(-3px); }
 
-        .social-links a:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        /* Responsive */
+        /* ========== RESPONSIVE ========== */
         @media (max-width: 1024px) {
-            .hero-content {
-                padding: 140px 5% 80px;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr 1fr;
-            }
+            .about-grid, .contact-container { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr 1fr; }
+            .service-panel { width: calc(50% - 30px); }
         }
 
         @media (max-width: 768px) {
-            nav {
-                padding: 0.75rem 5%;
-            }
-
-            .logo img {
-                height: 55px;
-            }
+            .logo img { height: 60px; }
 
             .nav-links {
                 position: fixed;
@@ -875,85 +847,46 @@
                 flex-direction: column;
                 justify-content: center;
                 gap: 2rem;
-                transition: right 0.4s ease;
+                transition: right 0.4s;
                 box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
             }
+            .nav-links.active { right: 0; }
+            .menu-toggle { display: flex; }
 
-            .nav-links.active {
-                right: 0;
-            }
+            .hero h1 { font-size: 3rem; }
 
-            .menu-toggle {
-                display: flex;
-            }
+            /* Zigzag becomes vertical stack */
+            .totem-pole-center { display: none; }
+            .totem-panels { padding-top: 20px; gap: 20px; }
+            .totem-service { justify-content: center !important; }
+            .service-panel { width: 100%; max-width: 400px; }
+            .service-panel::before, .service-panel::after { display: none !important; }
+            .totem-crown-text { position: relative; top: 0; transform: none; margin: 0 auto 20px; display: table; }
+            .totem-pole-base { display: none; }
 
-            .hero-text h1 {
-                font-size: 2.8rem;
-            }
-
-            .hero-text p {
-                font-size: 1rem;
-            }
-
-            .giant-totem {
-                max-width: 100%;
-            }
-
-            .totem-crown {
-                font-size: 1.5rem;
-                padding: 1.5rem 1rem;
-            }
-
-            .totem-panel-image {
-                height: 100px;
-            }
-
-            .truck-body {
-                flex-direction: column;
-            }
-
+            /* Truck responsive */
+            .truck { flex-direction: column; align-items: stretch; }
             .truck-cabin {
                 width: 100%;
+                height: 100px;
+                border-radius: 20px 20px 0 0;
                 flex-direction: row;
-                padding: 1rem;
-                gap: 1rem;
+                gap: 20px;
             }
+            .truck-cabin::before { display: none; }
+            .truck-cabin::after { display: none; }
+            .truck-cabin-icon { position: relative; bottom: auto; right: auto; }
+            .truck-cargo { margin-left: 0; margin-top: -10px; height: auto; }
+            .truck-wheels-container { display: none; }
 
-            .truck-wheels {
-                display: none;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .social-links {
-                justify-content: center;
-            }
+            .footer-content { grid-template-columns: 1fr; text-align: center; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+            .social-links { justify-content: center; }
         }
 
         @media (max-width: 480px) {
-            .logo img {
-                height: 45px;
-            }
-
-            .hero-text h1 {
-                font-size: 2.2rem;
-            }
-
-            .totem-panel-content h3 {
-                font-size: 1.1rem;
-            }
-
-            .totem-panel-content p {
-                font-size: 0.8rem;
-            }
+            .logo img { height: 50px; }
+            .hero h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
@@ -971,28 +904,18 @@
             <li><a href="#contacto" class="nav-cta">Cotizar</a></li>
         </ul>
         <div class="menu-toggle" id="menuToggle">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="inicio">
-        <div class="hero-bg">
-            <img src="images/fachada-truckdepot.jpeg" alt="">
-            <img src="images/totem-burgerkink.jpeg" alt="">
-            <img src="images/fachada-intelaf-noche.jpeg" alt="">
-        </div>
-
         <div class="hero-content">
-            <div class="hero-text">
-                <h1>PUBLICIDAD <span>VISUAL</span> QUE IMPACTA</h1>
-                <p>Expertos en vallas, tótems publicitarios, rotulación de fachadas y señalización. Más de 20 años transformando marcas en Guatemala.</p>
-                <div class="hero-buttons">
-                    <a href="#contacto" class="btn btn-primary">Solicitar Cotización</a>
-                    <a href="#servicios" class="btn btn-outline">Ver Servicios</a>
-                </div>
+            <h1>PUBLICIDAD <span>VISUAL</span> QUE IMPACTA</h1>
+            <p>Expertos en vallas, tótems publicitarios, rotulación de fachadas y señalización. Más de 20 años transformando marcas en Guatemala.</p>
+            <div class="hero-buttons">
+                <a href="#contacto" class="btn btn-primary">Solicitar Cotización</a>
+                <a href="#servicios" class="btn btn-outline">Ver Servicios</a>
             </div>
         </div>
     </section>
@@ -1010,12 +933,10 @@
                     <h3>MISIÓN</h3>
                     <p>"Crear experiencias visuales impactantes que conecten a las marcas con su audiencia, a través de soluciones de publicidad visual innovadoras y de alta calidad."</p>
                 </div>
-                
                 <div class="about-item">
                     <h3>VISIÓN</h3>
-                    <p>"Ser la empresa líder en publicidad visual en Guatemala, reconocida por nuestra creatividad, calidad y servicio al cliente, y ser el socio estratégico de las marcas que buscan destacarse en el mercado."</p>
+                    <p>"Ser la empresa líder en publicidad visual en Guatemala, reconocida por nuestra creatividad, calidad y servicio al cliente."</p>
                 </div>
-
                 <div class="about-badge">
                     <div class="about-badge-icon">🏛️</div>
                     <div class="about-badge-text">
@@ -1024,7 +945,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="about-images">
                 <img src="images/fachada-truckdepot.jpeg" alt="Fachada Truck Depot">
                 <img src="images/totem-burgerkink.jpeg" alt="Tótem publicitario">
@@ -1033,103 +953,129 @@
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Services Section - ZIGZAG TOTEM -->
     <section class="services" id="servicios">
         <div class="section-header">
             <span class="section-tag">Nuestros Servicios</span>
             <h2 class="section-title">SOLUCIONES PUBLICITARIAS</h2>
         </div>
 
-        <!-- Giant Totem Structure -->
-        <div class="giant-totem-wrapper">
-            <div class="giant-totem">
-                <!-- Crown/Header -->
-                <div class="totem-crown">PROMOCIONES SEGURAS</div>
-                
-                <!-- Body with service panels -->
-                <div class="totem-body">
-                    <!-- Panel 1: Tótems -->
-                    <div class="totem-panel">
-                        <img src="images/totem-burgerkink.jpeg" alt="Tótems Publicitarios" class="totem-panel-image">
-                        <div class="totem-panel-content">
+        <div class="zigzag-totem">
+            <!-- Central Pole -->
+            <div class="totem-pole-center"></div>
+            <div class="totem-crown-text">PROMOCIONES SEGURAS</div>
+            
+            <!-- Service Panels in Zigzag -->
+            <div class="totem-panels">
+                <!-- Panel 1 - LEFT -->
+                <div class="totem-service">
+                    <div class="service-panel">
+                        <img src="images/totem-burgerkink.jpeg" alt="Tótems Publicitarios">
+                        <div class="service-panel-content">
                             <h3>TÓTEMS PUBLICITARIOS</h3>
-                            <p>Estructuras verticales para plazas comerciales, gasolineras y centros de negocios.</p>
-                        </div>
-                    </div>
-
-                    <!-- Panel 2: Fachadas -->
-                    <div class="totem-panel">
-                        <img src="images/fachada-truckdepot.jpeg" alt="Fachadas Comerciales" class="totem-panel-image">
-                        <div class="totem-panel-content">
-                            <h3>FACHADAS COMERCIALES</h3>
-                            <p>Rotulación luminosa, letras corpóreas y cajas de luz para tu negocio.</p>
-                        </div>
-                    </div>
-
-                    <!-- Panel 3: Vallas -->
-                    <div class="totem-panel">
-                        <img src="images/valla-elektra.jpeg" alt="Vallas Publicitarias" class="totem-panel-image">
-                        <div class="totem-panel-content">
-                            <h3>VALLAS PUBLICITARIAS</h3>
-                            <p>Vallas convencionales y circuitos en carreteras de alto tráfico.</p>
-                        </div>
-                    </div>
-
-                    <!-- Panel 4: Rotulación -->
-                    <div class="totem-panel">
-                        <img src="images/fachada-bestmarket.jpeg" alt="Rotulación" class="totem-panel-image">
-                        <div class="totem-panel-content">
-                            <h3>ROTULACIÓN & SEÑALIZACIÓN</h3>
-                            <p>Rótulos luminosos, letras 3D y señalización interior y exterior.</p>
-                        </div>
-                    </div>
-
-                    <!-- Panel 5: Impresión -->
-                    <div class="totem-panel">
-                        <img src="images/rotulacion-pared.jpeg" alt="Impresión Digital" class="totem-panel-image">
-                        <div class="totem-panel-content">
-                            <h3>IMPRESIÓN DIGITAL</h3>
-                            <p>Lonas, vinilos y materiales impresos de gran formato con calidad fotográfica.</p>
-                        </div>
-                    </div>
-
-                    <!-- Panel 6: Mantenimiento -->
-                    <div class="totem-panel">
-                        <img src="images/letras-corporeas.jpeg" alt="Mantenimiento" class="totem-panel-image">
-                        <div class="totem-panel-content">
-                            <h3>MANTENIMIENTO</h3>
-                            <p>Limpieza, pintura y reparación de vallas y rótulos luminosos.</p>
+                            <p>Estructuras verticales de señalización para plazas comerciales, gasolineras y centros de negocios. Máxima visibilidad.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Base and Pole -->
-                <div class="totem-base"></div>
-                <div class="totem-pole"></div>
-                <div class="totem-shadow"></div>
+                <!-- Panel 2 - RIGHT -->
+                <div class="totem-service">
+                    <div class="service-panel">
+                        <img src="images/fachada-truckdepot.jpeg" alt="Fachadas Comerciales">
+                        <div class="service-panel-content">
+                            <h3>FACHADAS COMERCIALES</h3>
+                            <p>Rotulación luminosa y no luminosa con letras corpóreas, cajas de luz y acabados profesionales.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 3 - LEFT -->
+                <div class="totem-service">
+                    <div class="service-panel">
+                        <img src="images/valla-elektra.jpeg" alt="Vallas Publicitarias">
+                        <div class="service-panel-content">
+                            <h3>VALLAS PUBLICITARIAS</h3>
+                            <p>Vallas convencionales y circuitos en carreteras y áreas de alto tráfico vehicular.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 4 - RIGHT -->
+                <div class="totem-service">
+                    <div class="service-panel">
+                        <img src="images/fachada-bestmarket.jpeg" alt="Rotulación">
+                        <div class="service-panel-content">
+                            <h3>ROTULACIÓN & SEÑALIZACIÓN</h3>
+                            <p>Rótulos luminosos, letras 3D y señalización para interiores y exteriores.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 5 - LEFT -->
+                <div class="totem-service">
+                    <div class="service-panel">
+                        <img src="images/rotulacion-pared.jpeg" alt="Impresión Digital">
+                        <div class="service-panel-content">
+                            <h3>IMPRESIÓN DIGITAL</h3>
+                            <p>Lonas, vinilos y materiales de gran formato con calidad fotográfica profesional.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 6 - RIGHT -->
+                <div class="totem-service">
+                    <div class="service-panel">
+                        <img src="images/letras-corporeas.jpeg" alt="Mantenimiento">
+                        <div class="service-panel-content">
+                            <h3>MANTENIMIENTO</h3>
+                            <p>Limpieza, pintura, reparación y cambio de imagen para vallas y rótulos.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <!-- Pole Base -->
+            <div class="totem-pole-base"></div>
         </div>
 
-        <!-- Truck Service - Separate -->
-        <div class="service-extra">
-            <h3 class="service-extra-title">+ ROTULACIÓN VEHICULAR</h3>
-            <div class="truck-body">
-                <div class="truck-cabin">
-                    <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
-                    <span>FLOTA</span>
-                </div>
-                <div class="truck-cargo">
-                    <div class="truck-cargo-header">PUBLICIDAD MÓVIL</div>
-                    <div class="truck-cargo-content">
-                        <p>Instalación de materiales impresos sobre carros, camiones y flotillas. Convierte tus vehículos en publicidad móvil de alto impacto.</p>
+        <!-- TRUCK SECTION -->
+        <div class="truck-section">
+            <h3 class="truck-title">ROTULACIÓN VEHICULAR</h3>
+            
+            <div class="truck-container">
+                <div class="truck">
+                    <!-- Cabin -->
+                    <div class="truck-cabin">
+                        <div class="truck-cabin-icon">
+                            <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+                        </div>
+                    </div>
+                    <!-- Cargo -->
+                    <div class="truck-cargo">
+                        <div class="truck-cargo-header">PUBLICIDAD MÓVIL 24/7</div>
+                        <div class="truck-cargo-body">
+                            <h4>Tu flota trabajando para ti</h4>
+                            <p>Instalación profesional de vinilos y materiales impresos sobre carros, camiones, buses y flotillas completas. Convierte cada vehículo en un anuncio rodante de alto impacto.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="truck-wheels">
-                <div class="wheel"></div>
-                <div class="wheel"></div>
-                <div class="wheel"></div>
-                <div class="wheel"></div>
+                <!-- Wheels -->
+                <div class="truck-wheels-container">
+                    <div class="wheel-group">
+                        <div class="truck-wheel"></div>
+                        <div class="truck-wheel"></div>
+                    </div>
+                    <div class="wheel-group">
+                        <div class="truck-wheel"></div>
+                        <div class="truck-wheel"></div>
+                    </div>
+                    <div class="wheel-group">
+                        <div class="truck-wheel"></div>
+                        <div class="truck-wheel"></div>
+                    </div>
+                </div>
+                <!-- Ground -->
+                <div class="truck-ground"></div>
             </div>
         </div>
     </section>
@@ -1148,69 +1094,43 @@
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
                 </button>
                 <div class="faq-answer">
-                    <div class="faq-answer-content">
-                        El tiempo depende del tamaño y complejidad del proyecto. Un rótulo sencillo puede estar listo en 3-5 días hábiles. Proyectos más grandes como fachadas completas o tótems pueden tomar de 2 a 4 semanas. Te proporcionamos un cronograma detallado al aprobar la cotización.
-                    </div>
+                    <div class="faq-answer-content">El tiempo depende del tamaño y complejidad. Un rótulo sencillo puede estar listo en 3-5 días hábiles. Proyectos más grandes como fachadas completas o tótems pueden tomar de 2 a 4 semanas.</div>
                 </div>
             </div>
-
             <div class="faq-item">
                 <button class="faq-question">
-                    ¿Qué materiales utilizan para las vallas y rótulos?
+                    ¿Qué materiales utilizan?
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
                 </button>
                 <div class="faq-answer">
-                    <div class="faq-answer-content">
-                        Trabajamos con materiales de primera calidad: acrílico, ACM (panel de aluminio compuesto), Sintra, metal, vinilo de alta durabilidad, lonas frontlit y backlit, y sistemas LED para iluminación. Todos nuestros materiales son resistentes a la intemperie y rayos UV.
-                    </div>
+                    <div class="faq-answer-content">Trabajamos con materiales de primera calidad: acrílico, ACM (panel de aluminio compuesto), Sintra, metal, vinilo de alta durabilidad, lonas frontlit y backlit, y sistemas LED.</div>
                 </div>
             </div>
-
             <div class="faq-item">
                 <button class="faq-question">
                     ¿Ofrecen servicio de diseño gráfico?
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
                 </button>
                 <div class="faq-answer">
-                    <div class="faq-answer-content">
-                        Sí, contamos con un equipo de diseñadores gráficos que pueden crear o adaptar tu diseño para que luzca perfecto en el formato final. También podemos trabajar con archivos que nos proporciones (AI, PSD, PDF en alta resolución).
-                    </div>
+                    <div class="faq-answer-content">Sí, contamos con diseñadores gráficos que pueden crear o adaptar tu diseño para el formato final. También trabajamos con archivos que nos proporciones (AI, PSD, PDF).</div>
                 </div>
             </div>
-
             <div class="faq-item">
                 <button class="faq-question">
                     ¿Incluyen instalación en el precio?
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
                 </button>
                 <div class="faq-answer">
-                    <div class="faq-answer-content">
-                        Sí, todas nuestras cotizaciones incluyen la instalación profesional por nuestro equipo técnico capacitado. Contamos con el equipo necesario para instalaciones en altura y trabajamos bajo estrictas normas de seguridad.
-                    </div>
+                    <div class="faq-answer-content">Sí, todas nuestras cotizaciones incluyen instalación profesional por nuestro equipo técnico capacitado con equipo para trabajos en altura.</div>
                 </div>
             </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    ¿Dan mantenimiento a rótulos existentes?
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
-                </button>
-                <div class="faq-answer">
-                    <div class="faq-answer-content">
-                        Sí, ofrecemos servicio de mantenimiento que incluye limpieza, cambio de iluminación LED, reparación de estructuras, repintado y actualización de lonas. También hacemos cambios de imagen completos para renovar la publicidad.
-                    </div>
-                </div>
-            </div>
-
             <div class="faq-item">
                 <button class="faq-question">
                     ¿Trabajan en todo Guatemala?
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
                 </button>
                 <div class="faq-answer">
-                    <div class="faq-answer-content">
-                        Sí, tenemos cobertura en todo el territorio nacional. Hemos realizado instalaciones en la Ciudad de Guatemala, Antigua, Quetzaltenango, Escuintla, Petén y muchas otras localidades. Los costos de traslado se incluyen en la cotización según la ubicación.
-                    </div>
+                    <div class="faq-answer-content">Sí, tenemos cobertura nacional. Hemos realizado instalaciones en Ciudad de Guatemala, Antigua, Quetzaltenango, Escuintla, Petén y muchas otras localidades.</div>
                 </div>
             </div>
         </div>
@@ -1226,61 +1146,25 @@
                 
                 <ul class="contact-details">
                     <li>
-                        <div class="icon">
-                            <svg viewBox="0 0 24 24" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                            </svg>
-                        </div>
-                        <div class="info">
-                            <strong>Contacto 24/7</strong>
-                            <span>+502 4585-7699</span>
-                        </div>
+                        <div class="icon"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+                        <div class="info"><strong>Contacto 24/7</strong><span>+502 4585-7699</span></div>
                     </li>
                     <li>
-                        <div class="icon">
-                            <svg viewBox="0 0 24 24" stroke-width="2">
-                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                                <polyline points="9 22 9 12 15 12 15 22"/>
-                            </svg>
-                        </div>
-                        <div class="info">
-                            <strong>Oficina</strong>
-                            <span>+502 2385-7077/8</span>
-                            <small>Lunes a Viernes: 8:00 AM - 5:00 PM</small>
-                        </div>
+                        <div class="icon"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+                        <div class="info"><strong>Oficina</strong><span>+502 2385-7077/8</span><small>Lunes a Viernes: 8:00 AM - 5:00 PM</small></div>
                     </li>
                     <li>
-                        <div class="icon">
-                            <svg viewBox="0 0 24 24" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                <polyline points="22,6 12,13 2,6"/>
-                            </svg>
-                        </div>
-                        <div class="info">
-                            <strong>Email</strong>
-                            <span>hhernandez@promoseguros.com</span>
-                        </div>
+                        <div class="icon"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+                        <div class="info"><strong>Email</strong><span>hhernandez@promoseguros.com</span></div>
                     </li>
                 </ul>
             </div>
 
             <form class="contact-form" action="https://formspree.io/f/mlgggbwn" method="POST">
-                <div class="form-group">
-                    <label for="name">Nombre Completo</label>
-                    <input type="text" id="name" name="nombre" placeholder="Tu nombre" required>
-                </div>
-                <div class="form-group">
-                    <label for="company">Empresa (Opcional)</label>
-                    <input type="text" id="company" name="empresa" placeholder="Nombre de tu empresa">
-                </div>
-                <div class="form-group">
-                    <label for="email">Correo Electrónico</label>
-                    <input type="email" id="email" name="email" placeholder="tu@email.com" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Teléfono</label>
-                    <input type="tel" id="phone" name="telefono" placeholder="+502 0000-0000">
-                </div>
+                <div class="form-group"><label for="name">Nombre Completo</label><input type="text" id="name" name="nombre" placeholder="Tu nombre" required></div>
+                <div class="form-group"><label for="company">Empresa (Opcional)</label><input type="text" id="company" name="empresa" placeholder="Nombre de tu empresa"></div>
+                <div class="form-group"><label for="email">Correo Electrónico</label><input type="email" id="email" name="email" placeholder="tu@email.com" required></div>
+                <div class="form-group"><label for="phone">Teléfono</label><input type="tel" id="phone" name="telefono" placeholder="+502 0000-0000"></div>
                 <div class="form-group">
                     <label for="service">Servicio de Interés</label>
                     <select id="service" name="servicio">
@@ -1288,17 +1172,12 @@
                         <option value="Tótems Publicitarios">Tótems Publicitarios</option>
                         <option value="Fachadas Comerciales">Fachadas Comerciales</option>
                         <option value="Vallas Publicitarias">Vallas Publicitarias</option>
-                        <option value="Rotulación & Señalización">Rotulación & Señalización</option>
                         <option value="Rotulación Vehicular">Rotulación Vehicular</option>
                         <option value="Impresión Digital">Impresión Digital</option>
                         <option value="Mantenimiento">Mantenimiento</option>
-                        <option value="Otro">Otro</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="message">Mensaje</label>
-                    <textarea id="message" name="mensaje" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
-                </div>
+                <div class="form-group"><label for="message">Mensaje</label><textarea id="message" name="mensaje" placeholder="Cuéntanos sobre tu proyecto..." required></textarea></div>
                 <input type="hidden" name="_subject" value="Nueva cotización - Promociones Seguras">
                 <button type="submit" class="btn btn-primary">Enviar Solicitud</button>
             </form>
@@ -1312,7 +1191,6 @@
                 <img src="images/logo-nuevo.png" alt="Promociones Seguras, S.A.">
                 <p>Expertos en publicidad exterior, rotulación de fachadas y señalización. Más de 20 años transformando marcas en Guatemala.</p>
             </div>
-            
             <div class="footer-column">
                 <h4>Servicios</h4>
                 <ul>
@@ -1322,7 +1200,6 @@
                     <li><a href="#servicios">Rotulación Vehicular</a></li>
                 </ul>
             </div>
-            
             <div class="footer-column">
                 <h4>Empresa</h4>
                 <ul>
@@ -1331,7 +1208,6 @@
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </div>
-            
             <div class="footer-column">
                 <h4>Contacto</h4>
                 <ul>
@@ -1341,51 +1217,31 @@
                 </ul>
             </div>
         </div>
-        
         <div class="footer-bottom">
             <p>&copy; 2026 Promociones Seguras, S.A. Todos los derechos reservados.</p>
             <div class="social-links">
-                <a href="#" aria-label="Facebook">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-                </a>
-                <a href="https://wa.me/50245857699" aria-label="WhatsApp">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-                </a>
+                <a href="#" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                <a href="https://wa.me/50245857699" aria-label="WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-        
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+        // Mobile menu
+        document.getElementById('menuToggle').addEventListener('click', () => {
+            document.getElementById('navLinks').classList.toggle('active');
         });
-
-        // Close menu on link click
         document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
+            link.addEventListener('click', () => document.getElementById('navLinks').classList.remove('active'));
         });
 
-        // FAQ functionality
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const item = button.parentElement;
-                const isActive = item.classList.contains('active');
-                
-                // Close all
-                document.querySelectorAll('.faq-item').forEach(faq => {
-                    faq.classList.remove('active');
-                });
-                
-                // Open clicked if wasn't active
-                if (!isActive) {
-                    item.classList.add('active');
-                }
+        // FAQ
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const wasActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                if (!wasActive) item.classList.add('active');
             });
         });
 
@@ -1394,32 +1250,8 @@
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
             });
-        });
-
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.service-totem, .faq-item, .about-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
         });
     </script>
 </body>
