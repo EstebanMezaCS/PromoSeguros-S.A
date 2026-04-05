@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Promociones Seguras, S.A. | Visual Advertisement</title>
+    <title>Promociones Seguras, S.A. | Publicidad Visual Guatemala</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #E31C25;
-            --primary-dark: #B71C1C;
+            --primary: #C8102E;
+            --primary-dark: #9B0D23;
             --secondary: #1A1A1A;
-            --accent: #2D2D2D;
+            --accent: #F5A623;
             --light: #FFFFFF;
-            --gray-light: #F5F5F5;
-            --gray: #E0E0E0;
-            --gray-dark: #757575;
-            --text-dark: #212121;
+            --gray-light: #F7F7F7;
+            --gray: #E5E5E5;
+            --gray-dark: #666666;
+            --text-dark: #1A1A1A;
         }
 
         * {
@@ -31,7 +31,7 @@
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Work Sans', sans-serif;
             background: var(--light);
             color: var(--text-dark);
             overflow-x: hidden;
@@ -42,14 +42,13 @@
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 0.75rem 5%;
+            padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
         }
 
@@ -60,44 +59,14 @@
             text-decoration: none;
         }
 
-        .logo-icon {
-            width: 45px;
-            height: 45px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo-icon svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-            line-height: 1.1;
-        }
-
-        .logo-text .company-name {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--secondary);
-            letter-spacing: 0.5px;
-        }
-
-        .logo-text .tagline {
-            font-size: 0.65rem;
-            color: var(--primary);
-            font-weight: 500;
-            letter-spacing: 1px;
+        .logo img {
+            height: 50px;
+            width: auto;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             list-style: none;
             align-items: center;
         }
@@ -105,53 +74,28 @@
         .nav-links a {
             color: var(--secondary);
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
+            font-weight: 500;
+            font-size: 0.9rem;
             letter-spacing: 0.5px;
             text-transform: uppercase;
-            padding: 0.5rem 0;
-            position: relative;
             transition: color 0.3s ease;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: width 0.3s ease;
         }
 
         .nav-links a:hover {
             color: var(--primary);
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
         .nav-cta {
-            background: transparent;
-            color: var(--primary) !important;
-            padding: 0.6rem 1.25rem;
-            border: 2px solid var(--primary);
-            border-radius: 25px;
+            background: var(--primary);
+            color: white !important;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
             transition: all 0.3s ease !important;
-            font-weight: 700;
         }
 
         .nav-cta:hover {
-            background: var(--primary);
-            color: white !important;
+            background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(227, 28, 37, 0.3);
-        }
-
-        .nav-cta::after {
-            display: none !important;
         }
 
         .menu-toggle {
@@ -170,290 +114,174 @@
             border-radius: 2px;
         }
 
-        /* Hero Section with Carousel */
+        /* Hero Section */
         .hero {
             min-height: 100vh;
+            display: flex;
+            align-items: center;
             position: relative;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
+            background: linear-gradient(135deg, var(--secondary) 0%, #2d2d2d 100%);
         }
 
-        .carousel {
+        .hero-bg {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            padding: 10px;
+            opacity: 0.15;
         }
 
-        .carousel-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-
-        .carousel-slide.active {
-            opacity: 1;
-        }
-
-        .carousel-slide img {
+        .hero-bg img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .carousel-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
-        }
-
         .hero-content {
             position: relative;
             z-index: 2;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 120px 5% 60px;
-            text-align: center;
-        }
-
-        .hero-logo-icon {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 1rem;
-            animation: fadeInDown 0.8s ease forwards;
-        }
-
-        .hero-logo-icon svg {
             width: 100%;
-            height: 100%;
-        }
-
-        .hero h1 {
-            font-family: 'Oswald', sans-serif;
-            font-size: clamp(2.2rem, 6vw, 4.5rem);
-            font-weight: 700;
-            color: var(--light);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            animation: fadeInDown 0.8s ease 0.2s forwards;
-            opacity: 0;
-        }
-
-        .hero-tagline {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.9);
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            font-weight: 400;
-            margin-top: 0.5rem;
-            animation: fadeInDown 0.8s ease 0.4s forwards;
-            opacity: 0;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2.5rem;
-            animation: fadeInUp 0.8s ease 0.6s forwards;
-            opacity: 0;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .btn {
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: 2px solid transparent;
-        }
-
-        .btn-white {
-            background: var(--light);
-            color: var(--primary);
-            border-color: var(--light);
-        }
-
-        .btn-white:hover {
-            background: transparent;
-            color: var(--light);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--light);
-            border-color: var(--light);
-        }
-
-        .btn-outline:hover {
-            background: var(--light);
-            color: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            border-color: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(227, 28, 37, 0.3);
-        }
-
-        /* Carousel Indicators */
-        .carousel-indicators {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-            z-index: 3;
-        }
-
-        .carousel-indicators button {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            border: 2px solid white;
-            background: transparent;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .carousel-indicators button.active {
-            background: white;
-            transform: scale(1.2);
-        }
-
-        /* About Section */
-        .about {
-            padding: 6rem 5%;
-            background: var(--light);
-        }
-
-        .about-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
+            padding: 120px 5% 60px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
         }
 
-        .about-content h2 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 2.5rem;
-            color: var(--secondary);
-            text-transform: uppercase;
+        .hero-text h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            color: var(--light);
+            line-height: 0.95;
             letter-spacing: 2px;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
-        .about-item {
-            margin-bottom: 2rem;
-        }
-
-        .about-item h3 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.3rem;
+        .hero-text h1 span {
             color: var(--primary);
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.75rem;
-        }
-
-        .about-item p {
-            color: var(--gray-dark);
-            line-height: 1.8;
-            font-size: 0.95rem;
-        }
-
-        .about-badge {
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
             display: inline-flex;
             align-items: center;
-            gap: 1rem;
-            background: var(--gray-light);
-            padding: 1.25rem 1.5rem;
-            border-radius: 12px;
-            border-left: 4px solid var(--primary);
-            margin-top: 1rem;
+            gap: 8px;
         }
 
-        .about-badge-icon {
-            font-size: 2rem;
+        .btn-primary {
+            background: var(--primary);
+            color: white;
         }
 
-        .about-badge-text {
-            font-size: 0.9rem;
-            color: var(--text-dark);
-            font-weight: 500;
-            line-height: 1.5;
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(200, 16, 46, 0.4);
         }
 
-        .about-image {
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .btn-outline:hover {
+            border-color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hero Totem Display */
+        .hero-totem {
             position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            display: flex;
+            justify-content: center;
         }
 
-        .about-image img {
+        .totem-display {
+            width: 280px;
+            background: linear-gradient(180deg, #3a3a3a 0%, #2a2a2a 100%);
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+            transform: perspective(1000px) rotateY(-5deg);
+        }
+
+        .totem-header {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .totem-item {
+            background: white;
+            margin-bottom: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .totem-item:hover {
+            transform: scale(1.02);
+        }
+
+        .totem-item img {
             width: 100%;
-            height: 100%;
+            height: 60px;
             object-fit: cover;
         }
 
-        .about-image::before {
-            content: '';
+        .totem-pole {
             position: absolute;
-            top: -20px;
-            right: -20px;
-            width: 100px;
-            height: 100px;
-            background: var(--primary);
-            border-radius: 20px;
-            z-index: -1;
+            bottom: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 80px;
+            background: linear-gradient(90deg, #4a4a4a 0%, #666 50%, #4a4a4a 100%);
+            border-radius: 0 0 10px 10px;
         }
 
-        /* Services Section */
-        .services {
+        /* About Section */
+        .about {
             padding: 6rem 5%;
-            background: var(--gray-light);
+            background: var(--light);
         }
 
         .section-header {
@@ -464,234 +292,333 @@
         .section-tag {
             display: inline-block;
             color: var(--primary);
-            font-weight: 700;
+            font-weight: 600;
             letter-spacing: 3px;
             text-transform: uppercase;
-            font-size: 0.8rem;
-            margin-bottom: 0.75rem;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
         }
 
         .section-title {
-            font-family: 'Oswald', sans-serif;
-            font-size: clamp(2rem, 5vw, 3rem);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
             letter-spacing: 2px;
             color: var(--secondary);
-            text-transform: uppercase;
         }
 
-        .section-subtitle {
-            color: var(--gray-dark);
-            font-size: 1rem;
-            max-width: 600px;
-            margin: 1rem auto 0;
-            line-height: 1.7;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            max-width: 1400px;
+        .about-grid {
+            max-width: 1200px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
         }
 
-        .service-card {
-            background: var(--light);
-            border-radius: 16px;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            border: 1px solid var(--gray);
+        .about-content .about-item {
+            margin-bottom: 2rem;
         }
 
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
-            border-color: transparent;
-        }
-
-        .service-image {
-            width: 100%;
-            height: 200px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .service-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .service-card:hover .service-image img {
-            transform: scale(1.1);
-        }
-
-        .service-content {
-            padding: 1.5rem;
-        }
-
-        .service-content h3 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.4rem;
+        .about-content .about-item h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            color: var(--primary);
             letter-spacing: 1px;
             margin-bottom: 0.75rem;
-            color: var(--secondary);
-            text-transform: uppercase;
         }
 
-        .service-content p {
+        .about-content .about-item p {
             color: var(--gray-dark);
-            line-height: 1.6;
-            font-size: 0.9rem;
+            line-height: 1.8;
         }
 
-        /* Materials Section */
-        .materials {
-            padding: 6rem 5%;
-            background: var(--light);
-        }
-
-        .materials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 1.5rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .material-item {
+        .about-badge {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
             background: var(--gray-light);
-            border: 1px solid var(--gray);
-            border-radius: 12px;
-            padding: 1.75rem 1.25rem;
-            text-align: center;
-            transition: all 0.3s ease;
+            padding: 1.25rem 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
         }
 
-        .material-item:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-            box-shadow: 0 15px 40px rgba(227, 28, 37, 0.1);
+        .about-badge-icon {
+            font-size: 2rem;
         }
 
-        .material-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .material-item h4 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.1rem;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
-            color: var(--secondary);
-            text-transform: uppercase;
-        }
-
-        .material-item p {
-            color: var(--gray-dark);
-            font-size: 0.8rem;
+        .about-badge-text {
+            font-size: 0.9rem;
+            color: var(--text-dark);
             line-height: 1.5;
         }
 
-        /* Techniques Section */
-        .techniques {
-            padding: 6rem 5%;
-            background: var(--secondary);
-            color: var(--light);
-        }
-
-        .techniques .section-tag {
-            color: var(--primary);
-        }
-
-        .techniques .section-title {
-            color: var(--light);
-        }
-
-        .techniques .section-subtitle {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .techniques-container {
-            max-width: 1000px;
-            margin: 0 auto;
+        .about-images {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
         }
 
-        .technique-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 2.5rem 2rem;
-            text-align: center;
-            transition: all 0.4s ease;
+        .about-images img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
         }
 
-        .technique-card:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--primary);
-            transform: translateY(-5px);
+        .about-images img:hover {
+            transform: scale(1.03);
         }
 
-        .technique-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
+        .about-images img:first-child {
+            grid-column: span 2;
+            height: 250px;
         }
 
-        .technique-card h3 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.5rem;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
-            color: var(--primary);
-            text-transform: uppercase;
-        }
-
-        .technique-card p {
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.6;
-            font-size: 0.9rem;
-        }
-
-        /* CTA Section */
-        .cta {
+        /* Services Section - Totem Style */
+        .services {
             padding: 6rem 5%;
+            background: var(--secondary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .services .section-tag,
+        .services .section-title {
+            color: var(--light);
+        }
+
+        .services .section-header {
+            position: relative;
+            z-index: 1;
+        }
+
+        .services-totem-container {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .service-totem {
+            width: 300px;
+            background: linear-gradient(180deg, #3a3a3a 0%, #2a2a2a 100%);
+            border-radius: 12px;
+            padding: 0;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            transition: transform 0.4s ease;
+        }
+
+        .service-totem:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-totem-header {
             background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 1.25rem;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+        }
+
+        .service-totem-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .service-totem-content {
+            padding: 1.5rem;
+            background: white;
+        }
+
+        .service-totem-content p {
+            color: var(--gray-dark);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .service-totem-pole {
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(90deg, #4a4a4a 0%, #666 50%, #4a4a4a 100%);
+        }
+
+        /* Truck Service Card */
+        .service-truck {
+            width: 100%;
+            max-width: 600px;
+            position: relative;
+            margin: 2rem auto;
+        }
+
+        .truck-body {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            display: flex;
+        }
+
+        .truck-cabin {
+            width: 120px;
+            background: var(--primary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        .truck-cabin svg {
+            width: 50px;
+            height: 50px;
+            fill: white;
+        }
+
+        .truck-cabin span {
+            color: white;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            margin-top: 0.5rem;
             text-align: center;
         }
 
-        .cta h2 {
-            font-family: 'Oswald', sans-serif;
-            font-size: clamp(2rem, 5vw, 3rem);
-            letter-spacing: 2px;
-            color: var(--light);
-            text-transform: uppercase;
-            margin-bottom: 1rem;
+        .truck-cargo {
+            flex: 1;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
         }
 
-        .cta p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta .btn-white:hover {
+        .truck-cargo-header {
             background: var(--secondary);
-            border-color: var(--secondary);
-            color: var(--light);
+            color: white;
+            padding: 1rem 1.5rem;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+        }
+
+        .truck-cargo-content {
+            padding: 1.5rem;
+            flex: 1;
+        }
+
+        .truck-cargo-content p {
+            color: var(--gray-dark);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .truck-wheels {
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-around;
+            padding: 0 30px;
+        }
+
+        .wheel {
+            width: 35px;
+            height: 35px;
+            background: #333;
+            border-radius: 50%;
+            border: 4px solid #555;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 6rem 5%;
+            background: var(--gray-light);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem;
+            background: white;
+            border: none;
+            text-align: left;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--gray-light);
+        }
+
+        .faq-question svg {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-item.active .faq-question svg {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-answer-content {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--gray-dark);
+            line-height: 1.7;
         }
 
         /* Contact Section */
         .contact {
             padding: 6rem 5%;
-            background: var(--gray-light);
+            background: var(--light);
         }
 
         .contact-container {
@@ -700,15 +627,13 @@
             display: grid;
             grid-template-columns: 1fr 1.2fr;
             gap: 4rem;
-            align-items: start;
         }
 
         .contact-info h2 {
-            font-family: 'Oswald', sans-serif;
+            font-family: 'Bebas Neue', sans-serif;
             font-size: 2.5rem;
             letter-spacing: 2px;
             color: var(--secondary);
-            text-transform: uppercase;
             margin-bottom: 1.5rem;
         }
 
@@ -726,7 +651,7 @@
             display: flex;
             align-items: flex-start;
             gap: 1rem;
-            padding: 1rem 0;
+            padding: 1.25rem 0;
             border-bottom: 1px solid var(--gray);
         }
 
@@ -738,17 +663,18 @@
             width: 50px;
             height: 50px;
             background: var(--primary);
-            border-radius: 10px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
             flex-shrink: 0;
         }
 
         .contact-details .icon svg {
             width: 24px;
             height: 24px;
+            stroke: white;
+            fill: none;
         }
 
         .contact-details .info strong {
@@ -760,21 +686,20 @@
         .contact-details .info span {
             color: var(--gray-dark);
             font-size: 0.95rem;
-            display: block;
-            line-height: 1.6;
         }
 
         .contact-details .info small {
+            display: block;
             color: var(--gray-dark);
             font-size: 0.8rem;
             font-style: italic;
+            margin-top: 0.25rem;
         }
 
         .contact-form {
-            background: var(--light);
-            border-radius: 16px;
+            background: var(--gray-light);
+            border-radius: 12px;
             padding: 2.5rem;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
         }
 
         .form-group {
@@ -793,14 +718,13 @@
         .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 0.9rem 1.2rem;
-            background: var(--gray-light);
-            border: 2px solid transparent;
-            border-radius: 8px;
-            color: var(--text-dark);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
+            padding: 1rem;
+            background: white;
+            border: 2px solid var(--gray);
+            border-radius: 6px;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
         }
 
         .form-group input:focus,
@@ -808,7 +732,6 @@
         .form-group select:focus {
             outline: none;
             border-color: var(--primary);
-            background: var(--light);
         }
 
         .form-group textarea {
@@ -818,9 +741,7 @@
 
         .contact-form .btn {
             width: 100%;
-            padding: 1rem;
-            border: none;
-            font-family: 'Montserrat', sans-serif;
+            justify-content: center;
         }
 
         /* Footer */
@@ -838,12 +759,9 @@
             gap: 3rem;
         }
 
-        .footer-brand .logo {
+        .footer-brand img {
+            height: 60px;
             margin-bottom: 1.5rem;
-        }
-
-        .footer-brand .logo-text .company-name {
-            color: var(--light);
         }
 
         .footer-brand p {
@@ -853,12 +771,10 @@
         }
 
         .footer-column h4 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.1rem;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.2rem;
             letter-spacing: 1px;
             margin-bottom: 1.5rem;
-            color: var(--light);
-            text-transform: uppercase;
         }
 
         .footer-column ul {
@@ -913,7 +829,6 @@
             color: var(--light);
             text-decoration: none;
             transition: all 0.3s ease;
-            font-size: 1.2rem;
         }
 
         .social-links a:hover {
@@ -923,21 +838,30 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .about-container {
+            .hero-content {
                 grid-template-columns: 1fr;
+                text-align: center;
             }
 
-            .about-image {
-                max-width: 500px;
-                margin: 0 auto;
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-totem {
+                display: none;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
             }
 
             .contact-container {
                 grid-template-columns: 1fr;
-            }
-
-            .techniques-container {
-                grid-template-columns: 1fr 1fr;
             }
 
             .footer-content {
@@ -950,29 +874,15 @@
                 padding: 0.75rem 5%;
             }
 
-            .logo-icon {
-                width: 40px;
-                height: 40px;
-            }
-
-            .logo-text .company-name {
-                font-size: 0.95rem;
-            }
-
-            .logo-text .tagline {
-                font-size: 0.6rem;
-            }
-
             .nav-links {
                 position: fixed;
                 top: 0;
                 right: -100%;
-                width: 75%;
+                width: 80%;
                 height: 100vh;
-                background: var(--light);
+                background: white;
                 flex-direction: column;
                 justify-content: center;
-                align-items: center;
                 gap: 2rem;
                 transition: right 0.4s ease;
                 box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
@@ -986,61 +896,38 @@
                 display: flex;
             }
 
-            .hero-content {
-                padding: 100px 5% 80px;
+            .hero-text h1 {
+                font-size: 2.5rem;
             }
 
-            .hero-logo-icon {
-                width: 60px;
-                height: 60px;
-            }
-
-            .hero h1 {
-                font-size: 1.8rem;
-                letter-spacing: 1px;
-            }
-
-            .hero-tagline {
-                font-size: 0.85rem;
-                letter-spacing: 2px;
-            }
-
-            .hero-buttons {
+            .services-totem-container {
                 flex-direction: column;
+                align-items: center;
+            }
+
+            .service-totem {
                 width: 100%;
-                padding: 0 1rem;
-                gap: 0.75rem;
+                max-width: 350px;
             }
 
-            .hero-buttons .btn {
+            .truck-body {
+                flex-direction: column;
+            }
+
+            .truck-cabin {
                 width: 100%;
-                padding: 0.9rem 1.5rem;
-                font-size: 0.85rem;
+                flex-direction: row;
+                padding: 1rem;
+                gap: 1rem;
             }
 
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .materials-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .techniques-container {
-                grid-template-columns: 1fr;
-            }
-
-            .about-content h2 {
-                font-size: 2rem;
+            .truck-wheels {
+                display: none;
             }
 
             .footer-content {
                 grid-template-columns: 1fr;
                 text-align: center;
-            }
-
-            .footer-brand .logo {
-                justify-content: center;
             }
 
             .footer-bottom {
@@ -1052,83 +939,19 @@
                 justify-content: center;
             }
         }
-
-        @media (max-width: 480px) {
-            .logo-text .company-name {
-                font-size: 0.8rem;
-            }
-
-            .logo-text .tagline {
-                font-size: 0.55rem;
-            }
-
-            .logo-icon {
-                width: 35px;
-                height: 35px;
-            }
-
-            .hero h1 {
-                font-size: 1.5rem;
-            }
-
-            .hero-tagline {
-                font-size: 0.75rem;
-                letter-spacing: 1.5px;
-            }
-
-            .hero-logo-icon {
-                width: 50px;
-                height: 50px;
-            }
-
-            .section-title {
-                font-size: 1.5rem;
-            }
-
-            .about-badge {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .contact-details .icon {
-                width: 40px;
-                height: 40px;
-                font-size: 1rem;
-            }
-
-            .contact-details .info strong {
-                font-size: 0.85rem;
-            }
-
-            .contact-details .info span {
-                font-size: 0.8rem;
-            }
-        }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav id="navbar">
+    <nav>
         <a href="#inicio" class="logo">
-            <div class="logo-icon">
-                <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="5" y="5" width="50" height="42" rx="2" stroke="#1A1A1A" stroke-width="2.5" fill="white"/>
-                    <rect x="20" y="47" width="3" height="8" fill="#1A1A1A"/>
-                    <rect x="37" y="47" width="3" height="8" fill="#1A1A1A"/>
-                    <path d="M30 12 C33 12 34.5 14 34 18 L32 33 L28 33 L26 18 C25.5 14 27 12 30 12 Z" fill="#E31C25"/>
-                    <circle cx="30" cy="39" r="3.5" fill="#E31C25"/>
-                </svg>
-            </div>
-            <div class="logo-text">
-                <span class="company-name">Promociones Seguras, S.A.</span>
-                <span class="tagline">Visual Advertisement</span>
-            </div>
+            <img src="images/logo-nuevo.png" alt="Promociones Seguras, S.A.">
         </a>
         <ul class="nav-links" id="navLinks">
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#nosotros">Nosotros</a></li>
             <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#materiales">Materiales</a></li>
+            <li><a href="#faq">FAQ</a></li>
             <li><a href="#contacto" class="nav-cta">Cotizar</a></li>
         </ul>
         <div class="menu-toggle" id="menuToggle">
@@ -1138,73 +961,53 @@
         </div>
     </nav>
 
-    <!-- Hero Section with Carousel -->
+    <!-- Hero Section -->
     <section class="hero" id="inicio">
-        <div class="carousel">
-            <div class="carousel-slide active">
-                <img src="images/hero-1.jpeg" alt="Vallas publicitarias">
-                <div class="carousel-overlay"></div>
-            </div>
-            <div class="carousel-slide">
-                <img src="images/hero-2.jpeg" alt="Circuito de vallas KM 17.5">
-                <div class="carousel-overlay"></div>
-            </div>
-            <div class="carousel-slide">
-                <img src="images/hero-3.jpeg" alt="Valla Fraijanes">
-                <div class="carousel-overlay"></div>
-            </div>
-            <div class="carousel-slide">
-                <img src="images/hero-4.jpeg" alt="Publicidad exterior">
-                <div class="carousel-overlay"></div>
-            </div>
-            <div class="carousel-slide">
-                <img src="images/hero-5.jpeg" alt="Cambio de imagen">
-                <div class="carousel-overlay"></div>
-            </div>
+        <div class="hero-bg">
+            <img src="images/fachada-truckdepot.jpeg" alt="">
+            <img src="images/totem-burgerkink.jpeg" alt="">
+            <img src="images/fachada-intelaf-noche.jpeg" alt="">
         </div>
 
         <div class="hero-content">
-            <div class="hero-logo-icon">
-                <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="8" y="8" width="64" height="52" rx="3" stroke="white" stroke-width="3.5" fill="none"/>
-                    <rect x="26" y="60" width="4" height="10" fill="white"/>
-                    <rect x="50" y="60" width="4" height="10" fill="white"/>
-                    <path d="M40 18 C44 18 46 21 45.5 26 L43 44 L37 44 L34.5 26 C34 21 36 18 40 18 Z" fill="white"/>
-                    <circle cx="40" cy="52" r="5" fill="white"/>
-                </svg>
+            <div class="hero-text">
+                <h1>PUBLICIDAD <span>VISUAL</span> QUE IMPACTA</h1>
+                <p>Expertos en vallas, tótems publicitarios, rotulación de fachadas y señalización. Más de 20 años transformando marcas en Guatemala.</p>
+                <div class="hero-buttons">
+                    <a href="#contacto" class="btn btn-primary">Solicitar Cotización</a>
+                    <a href="#servicios" class="btn btn-outline">Ver Servicios</a>
+                </div>
             </div>
-            <h1>Promociones Seguras, S.A.</h1>
-            <p class="hero-tagline">Visual Advertisement</p>
-            
-            <div class="hero-buttons">
-                <a href="#contacto" class="btn btn-white">Solicitar Cotización</a>
-                <a href="#servicios" class="btn btn-outline">Ver Servicios</a>
-            </div>
-        </div>
 
-        <div class="carousel-indicators">
-            <button class="active" data-slide="0"></button>
-            <button data-slide="1"></button>
-            <button data-slide="2"></button>
-            <button data-slide="3"></button>
-            <button data-slide="4"></button>
+            <div class="hero-totem">
+                <div class="totem-display">
+                    <div class="totem-header">NUESTROS TRABAJOS</div>
+                    <div class="totem-item"><img src="images/fachada-truckdepot.jpeg" alt="Truck Depot"></div>
+                    <div class="totem-item"><img src="images/rotulo-intelaf.jpeg" alt="Intelaf"></div>
+                    <div class="totem-item"><img src="images/fachada-lavyserv.jpeg" alt="Lavyserv"></div>
+                    <div class="totem-item"><img src="images/valla-elektra.jpeg" alt="Elektra"></div>
+                </div>
+                <div class="totem-pole"></div>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section class="about" id="nosotros">
-        <div class="about-container">
+        <div class="section-header">
+            <span class="section-tag">Conócenos</span>
+            <h2 class="section-title">SOBRE NOSOTROS</h2>
+        </div>
+
+        <div class="about-grid">
             <div class="about-content">
-                <span class="section-tag">Conócenos</span>
-                <h2>Sobre Nosotros</h2>
-                
                 <div class="about-item">
-                    <h3>Misión</h3>
+                    <h3>MISIÓN</h3>
                     <p>"Crear experiencias visuales impactantes que conecten a las marcas con su audiencia, a través de soluciones de publicidad visual innovadoras y de alta calidad."</p>
                 </div>
                 
                 <div class="about-item">
-                    <h3>Visión</h3>
+                    <h3>VISIÓN</h3>
                     <p>"Ser la empresa líder en publicidad visual en Guatemala, reconocida por nuestra creatividad, calidad y servicio al cliente, y ser el socio estratégico de las marcas que buscan destacarse en el mercado."</p>
                 </div>
 
@@ -1217,8 +1020,10 @@
                 </div>
             </div>
 
-            <div class="about-image">
-                <img src="images/servicio-vallas.jpeg" alt="Vallas publicitarias Promociones Seguras">
+            <div class="about-images">
+                <img src="images/fachada-truckdepot.jpeg" alt="Fachada Truck Depot">
+                <img src="images/totem-burgerkink.jpeg" alt="Tótem publicitario">
+                <img src="images/fachada-intelaf-noche.jpeg" alt="Rotulación iluminada">
             </div>
         </div>
     </section>
@@ -1227,180 +1032,154 @@
     <section class="services" id="servicios">
         <div class="section-header">
             <span class="section-tag">Nuestros Servicios</span>
-            <h2 class="section-title">Soluciones Publicitarias Integrales</h2>
-            <p class="section-subtitle">Transformamos tu visión en impacto visual con calidad profesional y materiales de primera</p>
+            <h2 class="section-title">SOLUCIONES PUBLICITARIAS</h2>
         </div>
 
-        <div class="services-grid">
-            <!-- Publicidad Exterior -->
-            <div class="service-card">
-                <div class="service-image">
-                    <img src="images/servicio-vallas.jpeg" alt="Vallas publicitarias">
+        <div class="services-totem-container">
+            <!-- Totem 1: Tótems Publicitarios -->
+            <div class="service-totem">
+                <div class="service-totem-header">TÓTEMS PUBLICITARIOS</div>
+                <img src="images/totem-burgerkink.jpeg" alt="Tótem publicitario" class="service-totem-image">
+                <div class="service-totem-content">
+                    <p>Estructuras verticales de señalización para plazas comerciales, gasolineras y centros de negocios. Visibilidad desde múltiples ángulos.</p>
                 </div>
-                <div class="service-content">
-                    <h3>Publicidad Exterior</h3>
-                    <p>Vallas convencionales, circuitos de vallas en áreas establecidas, estructuras metálicas e instalación profesional para maximizar la visibilidad de tu marca.</p>
-                </div>
+                <div class="service-totem-pole"></div>
             </div>
 
-            <!-- Puentes Publicitarios -->
-            <div class="service-card">
-                <div class="service-image">
-                    <img src="images/servicio-puentes.png" alt="Publicidad en puentes">
+            <!-- Totem 2: Fachadas -->
+            <div class="service-totem">
+                <div class="service-totem-header">FACHADAS COMERCIALES</div>
+                <img src="images/fachada-truckdepot.jpeg" alt="Fachada comercial" class="service-totem-image">
+                <div class="service-totem-content">
+                    <p>Rotulación luminosa y no luminosa para fachadas. Letras corpóreas, cajas de luz y acabados profesionales que transforman tu negocio.</p>
                 </div>
-                <div class="service-content">
-                    <h3>Puentes Publicitarios</h3>
-                    <p>Publicidad de alto impacto en puentes peatonales y vehiculares con gran visibilidad y alcance masivo en puntos estratégicos de la ciudad.</p>
-                </div>
+                <div class="service-totem-pole"></div>
             </div>
 
-            <!-- Torres/Tótems -->
-            <div class="service-card">
-                <div class="service-image">
-                    <img src="images/servicio-totem.png" alt="Torres y tótems publicitarios">
+            <!-- Totem 3: Vallas -->
+            <div class="service-totem">
+                <div class="service-totem-header">VALLAS PUBLICITARIAS</div>
+                <img src="images/valla-elektra.jpeg" alt="Valla publicitaria" class="service-totem-image">
+                <div class="service-totem-content">
+                    <p>Vallas convencionales, circuitos de vallas en carreteras y áreas de alto tráfico. Máxima exposición para tu marca.</p>
                 </div>
-                <div class="service-content">
-                    <h3>Torres y Tótems</h3>
-                    <p>Estructuras verticales de señalización para centros comerciales, gasolineras y negocios que requieren visibilidad desde múltiples ángulos.</p>
-                </div>
+                <div class="service-totem-pole"></div>
             </div>
 
-            <!-- Rotulación de Fachadas -->
-            <div class="service-card">
-                <div class="service-image">
-                    <img src="images/servicio-fachadas.png" alt="Rotulación de fachadas">
+            <!-- Totem 4: Rotulación -->
+            <div class="service-totem">
+                <div class="service-totem-header">ROTULACIÓN & SEÑALIZACIÓN</div>
+                <img src="images/fachada-bestmarket.jpeg" alt="Rotulación" class="service-totem-image">
+                <div class="service-totem-content">
+                    <p>Rótulos luminosos, letras corpóreas 3D, señalización interior y exterior. Impacto visual para tu marca.</p>
                 </div>
-                <div class="service-content">
-                    <h3>Fachadas Comerciales</h3>
-                    <p>Rotulación luminosa y no luminosa para fachadas comerciales. Transformamos la imagen de tu negocio con acabados profesionales.</p>
+                <div class="service-totem-pole"></div>
+            </div>
+        </div>
+
+        <!-- Truck Service -->
+        <div class="service-truck">
+            <div class="truck-body">
+                <div class="truck-cabin">
+                    <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+                    <span>FLOTA</span>
+                </div>
+                <div class="truck-cargo">
+                    <div class="truck-cargo-header">ROTULACIÓN VEHICULAR</div>
+                    <div class="truck-cargo-content">
+                        <p>Instalación de materiales impresos sobre carros, camiones y flotillas. Convierte tus vehículos en publicidad móvil de alto impacto que trabaja 24/7.</p>
+                    </div>
                 </div>
             </div>
-
-            <!-- Rotulación -->
-            <div class="service-card">
-                <div class="service-image">
-                    <img src="images/servicio-rotulacion.png" alt="Rotulación y señalización">
-                </div>
-                <div class="service-content">
-                    <h3>Rotulación & Señalización</h3>
-                    <p>Rótulos luminosos, señalización interior y exterior, letras corpóreas 3D y decoración de espacios comerciales.</p>
-                </div>
-            </div>
-
-            <!-- Rotulación Vehicular -->
-            <div class="service-card">
-                <div class="service-image">
-                    <img src="images/servicio-vehicular.png" alt="Rotulación vehicular">
-                </div>
-                <div class="service-content">
-                    <h3>Rotulación Vehicular</h3>
-                    <p>Instalación de materiales impresos sobre carros, camiones y flotillas. Convierte tus vehículos en publicidad móvil de alto impacto.</p>
-                </div>
-            </div>
-
-            <!-- Impresión Digital -->
-            <div class="service-card">
-                <div class="service-image">
-                    <img src="images/servicio-impresion.png" alt="Impresión digital">
-                </div>
-                <div class="service-content">
-                    <h3>Impresión Digital</h3>
-                    <p>Impresiones de gran formato en lonas de vinilo con calidad fotográfica, colores vibrantes y laminado UV para mayor durabilidad.</p>
-                </div>
-            </div>
-
-            <!-- Mantenimiento -->
-            <div class="service-card">
-                <div class="service-image">
-                    <img src="images/servicio-mantenimiento.jpeg" alt="Mantenimiento de vallas">
-                </div>
-                <div class="service-content">
-                    <h3>Mantenimiento</h3>
-                    <p>Servicio de limpieza, pintura y mantenimiento preventivo para vallas publicitarias y rótulos luminosos. Mantén tu imagen siempre impecable.</p>
-                </div>
+            <div class="truck-wheels">
+                <div class="wheel"></div>
+                <div class="wheel"></div>
+                <div class="wheel"></div>
+                <div class="wheel"></div>
             </div>
         </div>
     </section>
 
-    <!-- Materials Section -->
-    <section class="materials" id="materiales">
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
         <div class="section-header">
-            <span class="section-tag">Calidad Garantizada</span>
-            <h2 class="section-title">Materiales Premium</h2>
-            <p class="section-subtitle">Trabajamos con los mejores materiales para garantizar durabilidad y acabados excepcionales</p>
+            <span class="section-tag">Preguntas Frecuentes</span>
+            <h2 class="section-title">¿TIENES DUDAS?</h2>
         </div>
 
-        <div class="materials-grid">
-            <div class="material-item">
-                <div class="material-icon">💎</div>
-                <h4>Acrílico</h4>
-                <p>Decoración, señalización y rótulos</p>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Cuánto tiempo tarda un proyecto de rotulación?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        El tiempo depende del tamaño y complejidad del proyecto. Un rótulo sencillo puede estar listo en 3-5 días hábiles. Proyectos más grandes como fachadas completas o tótems pueden tomar de 2 a 4 semanas. Te proporcionamos un cronograma detallado al aprobar la cotización.
+                    </div>
+                </div>
             </div>
-            <div class="material-item">
-                <div class="material-icon">🔥</div>
-                <h4>Termoformado</h4>
-                <p>Formas 3D personalizadas</p>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Qué materiales utilizan para las vallas y rótulos?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Trabajamos con materiales de primera calidad: acrílico, ACM (panel de aluminio compuesto), Sintra, metal, vinilo de alta durabilidad, lonas frontlit y backlit, y sistemas LED para iluminación. Todos nuestros materiales son resistentes a la intemperie y rayos UV.
+                    </div>
+                </div>
             </div>
-            <div class="material-item">
-                <div class="material-icon">📋</div>
-                <h4>Sintra</h4>
-                <p>PVC expandido versátil</p>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Ofrecen servicio de diseño gráfico?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Sí, contamos con un equipo de diseñadores gráficos que pueden crear o adaptar tu diseño para que luzca perfecto en el formato final. También podemos trabajar con archivos que nos proporciones (AI, PSD, PDF en alta resolución).
+                    </div>
+                </div>
             </div>
-            <div class="material-item">
-                <div class="material-icon">🏢</div>
-                <h4>ACM</h4>
-                <p>Panel compuesto aluminio</p>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Incluyen instalación en el precio?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Sí, todas nuestras cotizaciones incluyen la instalación profesional por nuestro equipo técnico capacitado. Contamos con el equipo necesario para instalaciones en altura y trabajamos bajo estrictas normas de seguridad.
+                    </div>
+                </div>
             </div>
-            <div class="material-item">
-                <div class="material-icon">⚙️</div>
-                <h4>Metal</h4>
-                <p>Estructuras y letras metálicas</p>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Dan mantenimiento a rótulos existentes?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Sí, ofrecemos servicio de mantenimiento que incluye limpieza, cambio de iluminación LED, reparación de estructuras, repintado y actualización de lonas. También hacemos cambios de imagen completos para renovar la publicidad.
+                    </div>
+                </div>
             </div>
-            <div class="material-item">
-                <div class="material-icon">🪟</div>
-                <h4>Vidrio</h4>
-                <p>Grabado y decoración</p>
-            </div>
-            <div class="material-item">
-                <div class="material-icon">🎞️</div>
-                <h4>Vinilo</h4>
-                <p>Adhesivos y recubrimientos</p>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Trabajan en todo Guatemala?
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Sí, tenemos cobertura en todo el territorio nacional. Hemos realizado instalaciones en la Ciudad de Guatemala, Antigua, Quetzaltenango, Escuintla, Petén y muchas otras localidades. Los costos de traslado se incluyen en la cotización según la ubicación.
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-
-    <!-- Techniques Section -->
-    <section class="techniques">
-        <div class="section-header">
-            <span class="section-tag">Técnicas Especializadas</span>
-            <h2 class="section-title">Servicios Adicionales</h2>
-            <p class="section-subtitle">Complementa tu imagen corporativa con nuestras técnicas de personalización</p>
-        </div>
-
-        <div class="techniques-container">
-            <div class="technique-card">
-                <div class="technique-icon">☀️</div>
-                <h3>Sublimación</h3>
-                <p>Transferencia permanente sobre textiles y materiales especiales con colores vivos y duraderos.</p>
-            </div>
-            <div class="technique-card">
-                <div class="technique-icon">🧵</div>
-                <h3>Bordados</h3>
-                <p>Personalización de uniformes, gorras y textiles corporativos con bordado de alta calidad.</p>
-            </div>
-            <div class="technique-card">
-                <div class="technique-icon">🎯</div>
-                <h3>Serigrafía</h3>
-                <p>Impresión tradicional para tirajes grandes con excelente relación calidad-precio.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta">
-        <h2>¿Tienes un Proyecto en Mente?</h2>
-        <p>Cuéntanos tu idea y la convertimos en realidad. Cotizaciones sin compromiso.</p>
-        <a href="#contacto" class="btn btn-white">Contáctanos Hoy</a>
     </section>
 
     <!-- Contact Section -->
@@ -1408,13 +1187,13 @@
         <div class="contact-container">
             <div class="contact-info">
                 <span class="section-tag">Contáctanos</span>
-                <h2>Ponte en Contacto</h2>
-                <p>Estamos listos para ayudarte a llevar tu marca al siguiente nivel. Solicita una cotización personalizada sin compromiso.</p>
+                <h2>SOLICITA TU COTIZACIÓN</h2>
+                <p>Estamos listos para ayudarte a llevar tu marca al siguiente nivel. Cuéntanos sobre tu proyecto y te responderemos en menos de 24 horas.</p>
                 
                 <ul class="contact-details">
                     <li>
                         <div class="icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg viewBox="0 0 24 24" stroke-width="2">
                                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                             </svg>
                         </div>
@@ -1425,7 +1204,7 @@
                     </li>
                     <li>
                         <div class="icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg viewBox="0 0 24 24" stroke-width="2">
                                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
                                 <polyline points="9 22 9 12 15 12 15 22"/>
                             </svg>
@@ -1438,7 +1217,7 @@
                     </li>
                     <li>
                         <div class="icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg viewBox="0 0 24 24" stroke-width="2">
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                                 <polyline points="22,6 12,13 2,6"/>
                             </svg>
@@ -1472,17 +1251,13 @@
                     <label for="service">Servicio de Interés</label>
                     <select id="service" name="servicio">
                         <option value="">Selecciona un servicio</option>
-                        <option value="Vallas Publicitarias">Vallas Publicitarias</option>
-                        <option value="Puentes Publicitarios">Puentes Publicitarios</option>
-                        <option value="Torres y Tótems">Torres y Tótems</option>
+                        <option value="Tótems Publicitarios">Tótems Publicitarios</option>
                         <option value="Fachadas Comerciales">Fachadas Comerciales</option>
-                        <option value="Rótulos y Señalización">Rótulos y Señalización</option>
+                        <option value="Vallas Publicitarias">Vallas Publicitarias</option>
+                        <option value="Rotulación & Señalización">Rotulación & Señalización</option>
                         <option value="Rotulación Vehicular">Rotulación Vehicular</option>
                         <option value="Impresión Digital">Impresión Digital</option>
                         <option value="Mantenimiento">Mantenimiento</option>
-                        <option value="Sublimación">Sublimación</option>
-                        <option value="Bordados">Bordados</option>
-                        <option value="Serigrafía">Serigrafía</option>
                         <option value="Otro">Otro</option>
                     </select>
                 </div>
@@ -1491,8 +1266,7 @@
                     <textarea id="message" name="mensaje" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
                 </div>
                 <input type="hidden" name="_subject" value="Nueva cotización - Promociones Seguras">
-                <input type="hidden" name="_next" value="https://promo-seguros-s-a.vercel.app/#contacto">
-                <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                <button type="submit" class="btn btn-primary">Enviar Solicitud</button>
             </form>
         </div>
     </section>
@@ -1501,52 +1275,34 @@
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
-                <a href="#inicio" class="logo">
-                    <div class="logo-icon">
-                        <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="5" y="5" width="50" height="42" rx="2" stroke="white" stroke-width="2.5" fill="none"/>
-                            <rect x="20" y="47" width="3" height="8" fill="white"/>
-                            <rect x="37" y="47" width="3" height="8" fill="white"/>
-                            <path d="M30 12 C33 12 34.5 14 34 18 L32 33 L28 33 L26 18 C25.5 14 27 12 30 12 Z" fill="#E31C25"/>
-                            <circle cx="30" cy="39" r="3.5" fill="#E31C25"/>
-                        </svg>
-                    </div>
-                    <div class="logo-text">
-                        <span class="company-name">Promociones Seguras, S.A.</span>
-                        <span class="tagline">Visual Advertisement</span>
-                    </div>
-                </a>
-                <p style="margin-top:1.5rem;">Expertos en publicidad exterior, señalización e imagen corporativa. Transformamos tus ideas en impacto visual.</p>
-                <p style="margin-top:1rem; font-size: 0.8rem; opacity: 0.7;">Miembros de la Gremial de Publicidad Exterior - Cámara de Industria de Guatemala</p>
+                <img src="images/logo-nuevo.png" alt="Promociones Seguras, S.A.">
+                <p>Expertos en publicidad exterior, rotulación de fachadas y señalización. Más de 20 años transformando marcas en Guatemala.</p>
             </div>
             
             <div class="footer-column">
                 <h4>Servicios</h4>
                 <ul>
+                    <li><a href="#servicios">Tótems Publicitarios</a></li>
+                    <li><a href="#servicios">Fachadas Comerciales</a></li>
                     <li><a href="#servicios">Vallas Publicitarias</a></li>
-                    <li><a href="#servicios">Puentes Publicitarios</a></li>
-                    <li><a href="#servicios">Fachadas</a></li>
                     <li><a href="#servicios">Rotulación Vehicular</a></li>
-                    <li><a href="#servicios">Mantenimiento</a></li>
                 </ul>
             </div>
             
             <div class="footer-column">
-                <h4>Técnicas</h4>
+                <h4>Empresa</h4>
                 <ul>
-                    <li><a href="#servicios">Sublimación</a></li>
-                    <li><a href="#servicios">Bordados</a></li>
-                    <li><a href="#servicios">Serigrafía</a></li>
-                    <li><a href="#servicios">Impresión Digital</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#faq">Preguntas Frecuentes</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </div>
             
             <div class="footer-column">
                 <h4>Contacto</h4>
                 <ul>
-                    <li><a href="#contacto">Cotización</a></li>
                     <li><a href="tel:+50245857699">+502 4585-7699</a></li>
-                    <li><a href="tel:+50223857077">+502 2385-7077/8</a></li>
+                    <li><a href="tel:+50223857077">+502 2385-7077</a></li>
                     <li><a href="mailto:hhernandez@promoseguros.com">Email</a></li>
                 </ul>
             </div>
@@ -1555,9 +1311,12 @@
         <div class="footer-bottom">
             <p>&copy; 2026 Promociones Seguras, S.A. Todos los derechos reservados.</p>
             <div class="social-links">
-                <a href="#" aria-label="Facebook">f</a>
-                <a href="#" aria-label="Instagram">📷</a>
-                <a href="https://wa.me/50245857699" aria-label="WhatsApp">💬</a>
+                <a href="#" aria-label="Facebook">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                </a>
+                <a href="https://wa.me/50245857699" aria-label="WhatsApp">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+                </a>
             </div>
         </div>
     </footer>
@@ -1571,71 +1330,43 @@
             navLinks.classList.toggle('active');
         });
 
-        // Close menu when clicking a link
+        // Close menu on link click
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
             });
         });
 
-        // Smooth scroll for anchor links
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(faq => {
+                    faq.classList.remove('active');
+                });
+                
+                // Open clicked if wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
 
-        // Carousel functionality
-        const slides = document.querySelectorAll('.carousel-slide');
-        const indicators = document.querySelectorAll('.carousel-indicators button');
-        let currentSlide = 0;
-        let autoplayInterval;
-
-        function showSlide(index) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            indicators.forEach(indicator => indicator.classList.remove('active'));
-            
-            currentSlide = index;
-            if (currentSlide >= slides.length) currentSlide = 0;
-            if (currentSlide < 0) currentSlide = slides.length - 1;
-            
-            slides[currentSlide].classList.add('active');
-            indicators[currentSlide].classList.add('active');
-        }
-
-        function nextSlide() {
-            showSlide(currentSlide + 1);
-        }
-
-        // Auto-advance carousel
-        function startAutoplay() {
-            autoplayInterval = setInterval(nextSlide, 5000);
-        }
-
-        function stopAutoplay() {
-            clearInterval(autoplayInterval);
-        }
-
-        // Click indicators to change slide
-        indicators.forEach((indicator, index) => {
-            indicator.addEventListener('click', () => {
-                stopAutoplay();
-                showSlide(index);
-                startAutoplay();
-            });
-        });
-
-        // Start autoplay
-        startAutoplay();
-
-        // Intersection Observer for animations
+        // Scroll animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -1650,7 +1381,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.service-card, .material-item, .technique-card, .about-item').forEach(el => {
+        document.querySelectorAll('.service-totem, .faq-item, .about-item').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
